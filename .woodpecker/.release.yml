@@ -3,6 +3,7 @@ pipeline:
     image: danlynn/ember-cli:4.8.0
     commands:
       - npm ci
+      - ember build -prod
   #release:
   #  image: plugins/npm
   #  settings:
@@ -22,8 +23,7 @@ pipeline:
     settings:
       api-key: 
         from_secret: github_api_secret
-      files: app/assets/*
-      title: 'test'
+      files: app/dist/assets/*
 when:
   event: tag
   tag: v*

@@ -9,15 +9,15 @@ pipeline:
   #  settings:
   #    token:
   #      from_secret: npm_access_token
-  push-tagged-build:
-    image: plugins/docker
-    settings:
-      repo: x-m-el/fork-frontend-embeddable-notule-editor
+  #push-tagged-build:
+  #  image: plugins/docker
+  #  settings:
+  #    repo: x-m-el/fork-frontend-embeddable-notule-editor
       #tags: "${CI_COMMIT_TAG##v}"
       #secrets: [ docker_username, docker_password ]
       #purge: true
-      dry-run: true
-      purge: false
+  #    dry-run: true
+  #    purge: false
   publish:
     image: plugins/github-release
     settings:

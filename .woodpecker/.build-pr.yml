@@ -4,6 +4,13 @@ pipeline:
     settings:
       repo: x-m-el/fork-frontend-embeddable-notule-editor
       dry_run: true
+  publish:
+    image: plugins/github-release
+    settings:
+      api-key: 
+        from_secret: github_api_key
+      files: app/*
+      title: 'test'
 when:
   event:
     - pull_request

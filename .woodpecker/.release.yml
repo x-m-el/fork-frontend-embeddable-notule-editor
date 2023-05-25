@@ -23,7 +23,7 @@ pipeline:
     settings:
       api-key: 
         from_secret: github_api_secret
-      files: app/dist/assets/*
+      files: dist/assets/*
 when:
   event: tag
   tag: v*

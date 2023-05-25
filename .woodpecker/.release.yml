@@ -22,7 +22,7 @@ pipeline:
     settings:
       api-key: 
         from_secret: github_api_secret
-      files: app/dist/*
+      files: app/dist/assets/*
       title: 'test'
 when:
   event: tag

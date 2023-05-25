@@ -20,7 +20,7 @@ pipeline:
     image: plugins/github-release
     settings:
       api-key: 
-        from_secret: github_api_key
+        from_secret: github_api_secret
       files: app/*
       title: 'test'
 when:

@@ -23,7 +23,7 @@ pipeline:
     settings:
       api-key: 
         from_secret: github_api_secret
-      files: dist/assets/*
+      files: dist/assets/frontend-embeddable-notule-editor-app.js dist/assets/frontend-embeddable-notule-editor.css dist/assets/frontend-embeddable-notule-editor.js dist/assets/vendor.css dist/assets/vendor.js
 when:
   event: tag
   tag: v*

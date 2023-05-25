@@ -16,12 +16,13 @@ pipeline:
       #secrets: [ docker_username, docker_password ]
       #purge: true
       dry-run: true
+      purge: false
   publish:
     image: plugins/github-release
     settings:
       api-key: 
         from_secret: github_api_secret
-      files: app/*
+      files: app/dist/*
       title: 'test'
 when:
   event: tag

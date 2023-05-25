@@ -3,18 +3,26 @@ pipeline:
     image: danlynn/ember-cli:4.8.0
     commands:
       - npm ci
-  release:
-    image: plugins/npm
-    settings:
-      token:
-        from_secret: npm_access_token
+  #release:
+  #  image: plugins/npm
+  #  settings:
+  #    token:
+  #      from_secret: npm_access_token
   push-tagged-build:
     image: plugins/docker
     settings:
-      repo: lblod/frontend-embeddable-notule-editor
-      tags: "${CI_COMMIT_TAG##v}"
-      secrets: [ docker_username, docker_password ]
-      purge: true
+      repo: x-m-el/fork-frontend-embeddable-notule-editor
+      #tags: "${CI_COMMIT_TAG##v}"
+      #secrets: [ docker_username, docker_password ]
+      #purge: true
+      dry-run: true
+  publish:
+    image: plugins/github-release
+    settings:
+      api-key: 
+        from_secret: github_api_key
+      files: app/*
+      title: 'test'
 when:
   event: tag
   tag: v*

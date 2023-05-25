@@ -27,8 +27,10 @@ pipeline:
         - dist/assets/frontend-embeddable-notule-editor-app.js 
         - dist/assets/frontend-embeddable-notule-editor.css 
         - dist/assets/frontend-embeddable-notule-editor.js
-        - dist/assets/vendor.css
         - dist/assets/vendor.js
+        # vendor.css is empty as this point. Github releases does not accept empty files.
+        #- dist/assets/vendor.css
+        
 when:
   event: tag
   tag: v*
